@@ -1,0 +1,275 @@
+/* punto es para clase personalizada */
+
+/* BEM
+Block= un nombre que identifique al bloque (Hola)
+.hola {
+}
+ELEMENTS= un nombre que identifique a un elemento (Hola imagen)
+.hola__imagen{
+}
+MODIFIER= Hola__Enlace--Activate 
+.hola__imagen--Activate{
+}*/
+
+/* 1rem = 16PX */
+
+:root{
+    --primario: #17b2e3;
+    --primarioOscuro: #3660f7;
+    --segundario: #04e2e2;
+    --segundariooscuro: rgb(2,83,233);
+    --blanco: #ffffff;
+    --negro: #000000;
+    --fuente-principal: 'Staatliches', cursive; 
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,*::before, *::after{
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--primario);
+    line-height: 1.5;
+}
+
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a {
+    text-decoration: none; 
+}
+
+img {
+    max-width: 100%;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+    color: var(--blanco);
+    font-family: var(--fuente-principal);
+}
+
+/* Css Header */
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header_logo{
+    margin: 3rem 0;
+}
+
+/* Css Navegacion */
+.navegacion{
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.navegacion_enlace{
+    font-family: var(--fuente-principal);
+    color: var(--blanco);
+    font-size: 3rem;
+}
+
+.navegacion_enlace:hover, .navegacion_enlace--activo{
+    color: var(--segundario);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+
+@media (min-width:768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        
+    }
+}
+
+.producto{
+    background-color:var(--primarioOscuro);
+    padding: 1rem;
+    /* margin: 1rem; */
+}
+
+.producto :hover{
+    color: var(--primario);
+}
+
+.producto__nombre{
+    font-size: 4rem;
+}
+
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--segundario);
+}
+
+.producto__nombre, .producto__precio{
+    text-align: center;
+    font-family: var(--fuente-principal);
+    line-height: 2.2rem;
+    margin: 2rem;
+} 
+
+.grafico--producto{
+    grid-row:2/3;
+    grid-column: 1/3;
+    background-image: url(/img/grafico1.jpg);
+
+}
+
+.grafico--producto2{
+    grid-row:8/9;
+    grid-column: 1/3;
+    background-image: url(/img/grafico2.jpg);
+}
+
+@media (min-width:760px) {
+        
+    .grafico--producto2{
+        grid-row:5/6;
+        grid-column: 2/4;
+    }
+    
+}
+
+.grafico{
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Css Footer */
+.footer{
+    background-color:var(--primarioOscuro);
+    padding: 1rem 0;
+    margin-top: 2.2rem;
+}
+
+.footer_texto{
+    text-align: center;
+    font-family: var(--fuente-principal);
+    font-size: 2.2rem;
+}
+
+/*Pagina de Producto */
+@media (min-width:768px) {
+
+    .pro{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 3rem;
+    }
+    
+}
+
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+
+.formulario__campo{
+    border: 1rem solid var(--primarioOscuro);
+    background-color: transparent;
+    color: var(--negro);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+}
+
+.formulario__submit{
+    border: 1rem solid var(--segundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuente-principal);
+    padding: 2rem;
+    transition: background-color .3s ease;
+    grid-column: 1/3;
+}
+
+.formulario__submit:hover{
+    cursor: pointer;
+    background-color: var(--segundariooscuro);
+}
+
+/* Pagina de Nosotros*/
+.divisor{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    text-align: center;
+}
+
+@media (min-width:768px) {
+    .divisor{
+        grid-template-columns: repeat(2,1fr);
+    } 
+}
+
+.divisor__imagen {
+    margin: auto;
+}
+
+.referencia{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fuente-principal);
+    gap: 3rem;
+}
+
+@media (min-width:768px) {
+    .referencia{
+        text-align: center;
+        flex-direction:row;
+    }
+}
+
+
+.caja{
+    font-family: var(--fuente-principal);
+    width: 300px;
+    height: 400px;
+    line-height: center;
+    margin:0 auto;
+}
+
+.caja__titulo{
+    font-size: larger;
+}
+
